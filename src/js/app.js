@@ -17,7 +17,7 @@ function controllerRouter(){
 
   $.when(userFetch, repoFetch).then(function(userData, repoData){
     // console.log(userData, repoData)
-
+    console.log(repoData)
     userInfoEl.innerHTML = `
                               <img class="profile-picture" src="${userData[0].avatar_url}">
                               <h3 class= "user-info__name">${userData[0].name}</h3>
@@ -38,7 +38,7 @@ function controllerRouter(){
     forEach(repoData[0], function(eachRepo, i){
         var repoHTML= `
                     <div class="repo-list__repo-information">
-                      <h4 class="repo-name">${eachRepo.name}</h4>
+                      <h4 class="repo-name"><a href="${eachRepo.html_url}" target="_blank">${eachRepo.name}</a></h4>
                       <p class="repo-description">${eachRepo.description}</p>
                       <p class="repo-minor-data">${eachRepo.language} | ${eachRepo.forks} | ${eachRepo.updated_at}</p>
                     </div>`
@@ -51,6 +51,9 @@ function controllerRouter(){
 var userInfoEl = document.querySelector('.user-info__personal');
 var repoListEl = document.querySelector('.repo-list');
 var searchBarEl = document.querySelector('.navbar-left')
+var repoSearchBar = document.querySelector('.repo-searchbar__button')
+var repoListEl = document.querySelector('.repo-list');
+
 
 searchBarEl.addEventListener('keypress', function(evt){
   var userSearch = ''
@@ -61,5 +64,12 @@ searchBarEl.addEventListener('keypress', function(evt){
     document.getElementById("searchTxt").value = '';
     }
 })
+
+//I want this to work, but i just can't figure it out....
+//
+// repoSearchBar.addEventListener('click', function(evt){
+//     let userSearch = document.getElementById("repository-search").value;
+//     console.log(userSearch)
+// })
 
 window.addEventListener('hashchange', controllerRouter())
