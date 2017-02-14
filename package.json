@@ -6,8 +6,8 @@
   "scripts": {
     "go": "npm run stop && npm run watch",
     "stop": "bash ./bin/kill.sh",
-    "watch": "npm run watch-js && npm run watch-css && npm run display-start-msg&",
-	 "display-start-msg": "echo '\n\n===== watching js and scss files in src/, writing changes to public/ =====\n\n'", 
+    "start": "npm run watch-js && npm run watch-css && npm run display-start-msg&",
+	 "display-start-msg": "echo '\n\n===== watching js and scss files in src/, writing changes to public/ =====\n\n'",
     "watch-js": "./node_modules/.bin/watchify ./src/js/app.js --debug --verbose --transform babelify -o ./dist/js/app.js&",
     "watch-css": "./node_modules/.bin/node-sass -w --output-style compressed ./src/scss/styles.scss ./dist/css/styles.css&"
   },

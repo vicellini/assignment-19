@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Assignment 19</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="./dist/css/styles.css">
 </head>
 <body>
-	<div id="app-container"><h1>I &#10084; u baby shampu</h1></div>
+	<div id="app-container">
+		<nav class="navbar u_column-container">
+			<div class="navbar-left">
+				<i class="fa fa-github" aria-hidden="true"></i>
+				<input type="text" placeholder="Search GitHub" id="searchTxt">
+				<a href="#">Pull requests</a>
+				<a href="#">Issues</a>
+				<a href="#">Gist</a>
+			</div>
+			<div class="navbar-right">
+				<a href="#"> <i class="fa fa-bell" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-plus" aria-hidden="true"></i>
+				<a href="#"><img src=""></a>
+			<div>
+		</nav>
+	<div class="all-user-info u_column-container">
+		<div class="column user-info">
+			<div class="user-info__personal">
+			</div>
+		</div>
+		<div class="column user-repo">
+			<form class="repo-searchbar">
+				<input type="text" placeholder="Search repositories" class="repo-searchbar__input">
+				<input type ="button" value="Search" class="repo-searchbar__button">
+			</form>
+			<div class="repo-list"></div>
+		</div>
+	</div>
+</div>
 	<script type="text/javascript" src="./dist/js/app.js"></script>
 </body>
 </html>
